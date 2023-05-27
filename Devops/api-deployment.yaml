@@ -29,4 +29,6 @@ spec:
             value: "America/Sao_Paulo"
           - name: DBCON
             value: "server=mysql;uid=root;pwd=Devplus@2019;database=smart_contabil;Convert Zero Datetime=True"
+          - name: ConnectionStrings__Postgres
+            value: "Server=homeclay.duckdns.org;Port=55432;Database=coffe-code;User Id=postgres;Password=Gd5feder@l"
             
