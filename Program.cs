@@ -1,19 +1,17 @@
 using CoffeCodeDevops.Data;
 using CoffeCodeDevops.Data.Repository;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
 builder.Services.AddDbContext<DBDataContext>();
 builder.Services.AddScoped(typeof(TestTableRepository));
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -21,9 +19,14 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
 app.UseAuthorization();
-
 app.MapControllers();
 
+
+using (var context = new DBDataContext())
+{
+    Console.WriteLine("Executando Migrations...");
+    context.Database.Migrate();
+    Console.WriteLine("OK...");
+}
 app.Run();
