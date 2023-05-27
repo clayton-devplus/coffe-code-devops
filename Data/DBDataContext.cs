@@ -1,4 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using CoffeCodeDevops.Data.Configurations;
+using CoffeCodeDevops.Data.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace CoffeCodeDevops.Data
 {
@@ -6,6 +8,8 @@ namespace CoffeCodeDevops.Data
 
     public class DBDataContext : DbContext
     {
+        public DbSet<TestTableModel> TestTable { get; set; }
+
         public IConfiguration Configuration { get; }
 
         public DBDataContext()
@@ -35,6 +39,10 @@ namespace CoffeCodeDevops.Data
             var config = GetConfiguration();
             optionsBuilder.UseNpgsql(config.GetConnectionString("Postgres"));
 
+        }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ApplyConfiguration(new TestTableConfiguration());
         }
     }
 
