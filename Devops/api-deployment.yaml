@@ -5,7 +5,7 @@ metadata:
   labels:
     app: api
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: api
@@ -17,13 +17,6 @@ spec:
       containers:
       - name: api
         image: gcr.io/PROJECT_ID/IMAGE:TAG
-        resources:
-          requests:
-            memory: "1200Mi"
-            cpu: "100m"
-          limits:
-            memory: "1400Mi"
-            cpu: "100m"
         ports:
           - name: http-port
             containerPort: 80
