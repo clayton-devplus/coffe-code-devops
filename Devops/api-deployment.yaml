@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api-deployment
+  labels:
+    app: api
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: api
+  template:
+    metadata:
+      labels:
+        app: api
+    spec:
+      containers:
+      - name: api
+        image: gcr.io/PROJECT_ID/IMAGE:TAG
+        resources:
+          requests:
+            memory: "1200Mi"
+            cpu: "100m"
+          limits:
+            memory: "1400Mi"
+            cpu: "100m"
+        ports:
+          - name: http-port
+            containerPort: 80
+          - name: https-port
+            containerPort: 443
+        env:
+          - name: ASPNETCORE_ENVIRONMENT
+            value: "Development"
+          - name: TZ
+            value: "America/Sao_Paulo"
+          - name: DBCON
+            value: "server=mysql;uid=root;pwd=Devplus@2019;database=smart_contabil;Convert Zero Datetime=True"
+            
