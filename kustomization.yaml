@@ -2,3 +2,4 @@ resources:
 - Devops/api-deployment.yaml
 - Devops/api-svc.yaml
 - Devops/ingress-svc.yaml
+- Devops/api-cert.yaml

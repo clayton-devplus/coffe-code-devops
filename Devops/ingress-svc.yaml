@@ -2,6 +2,10 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: api-ingress
+  annotations:
+    kubernetes.io/ingress.global-static-ip-name: ip-api
+    networking.gke.io/managed-certificates: api-cert
+    kubernetes.io/ingress.class: "gce"
 spec:
   defaultBackend:
     service:
