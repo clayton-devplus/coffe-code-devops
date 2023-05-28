@@ -3,10 +3,16 @@ kind: Ingress
 metadata:
   name: api-ingress
   annotations:
-    kubernetes.io/ingress.class: "gce-internal"
+    kubernetes.io/ingress.class: "gce"
+    kubernetes.io/ingress.global-static-ip-name: "ingress-api"
 spec:
-  defaultBackend:
-    service:
-      name: api-svc
-      port:
-        number: 80
+  rules:
+  - http:
+      paths:
+      - path: "/*"
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: api-svc
+            port:
+              number: 80
