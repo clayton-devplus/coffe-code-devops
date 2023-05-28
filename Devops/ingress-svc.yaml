@@ -3,7 +3,7 @@ kind: Ingress
 metadata:
   name: api-ingress
   annotations:
-    ingress.kubernetes.io/static-ip: "api.6cloud.com.br"
+    ingress.kubernetes.io/static-ip: "k8s2-fr-ap5de71h-default-api-ingress-s0ubiqdx"
     networking.gke.io/managed-certificates: "api-cert"
     kubernetes.io/ingress.class: "gce"
 spec:
