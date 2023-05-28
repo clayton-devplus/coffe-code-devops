@@ -5,3 +5,4 @@ metadata:
 spec:
   domains:
     - api.6cloud.com.br
+    - dev.6cloud.com.br

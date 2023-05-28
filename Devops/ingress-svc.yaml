@@ -11,7 +11,3 @@ spec:
       name: api-svc
       port:
         number: 80
-status:
-  loadBalancer:
-    ingress:
-    - ip: 35.203.76.155
