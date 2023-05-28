@@ -3,15 +3,10 @@ kind: Ingress
 metadata:
   name: api-ingress
   annotations:
-    networking.gke.io/managed-certificates: "api-cert"
+    kubernetes.io/ingress.class: "gce-internal"
 spec:
-  rules:
-  - host: api.6cloud.com.br
-    http:
-      paths:
-      - pathType: ImplementationSpecific
-        backend:
-          service:
-            name: api-svc
-            port:
-              number: 80
+  defaultBackend:
+    service:
+      name: api-svc
+      port:
+        number: 80
