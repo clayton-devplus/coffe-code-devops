@@ -7,13 +7,8 @@ metadata:
     kubernetes.io/ingress.global-static-ip-name: "ingress-api"
     networking.gke.io/managed-certificates: api-cert
 spec:
-  rules:
-  - http:
-      paths:
-      - path: "/*"
-        pathType: ImplementationSpecific
-        backend:
-          service:
-            name: api-svc
-            port:
-              number: 80
+  defaultBackend:
+    service:
+      name: api-svc
+      port:
+        number: 80
