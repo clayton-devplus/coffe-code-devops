@@ -7,3 +7,4 @@ resources:
 - Devops/postgres/postgres-configmap.yaml
 - Devops/postgres/postgres-storage.yaml
 - Devops/postgres/postgres-deployment.yaml
+- Devops/postgres/postgres-svc.yaml
