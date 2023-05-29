@@ -10,6 +10,15 @@ builder.Services.AddScoped(typeof(FeedbackRepository));
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(
+        policy =>
+        {
+            policy.WithOrigins("*");
+        });
+});
+
 
 var app = builder.Build();
 
@@ -22,6 +31,11 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseAuthorization();
 app.MapControllers();
+app.UseCors(x => x
+      .AllowAnyMethod()
+      .AllowAnyOrigin()
+      .AllowAnyHeader()
+      .SetIsOriginAllowed(origin => true));
 
 
 using (var context = new DBDataContext())
