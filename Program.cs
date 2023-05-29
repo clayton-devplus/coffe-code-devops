@@ -6,6 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<DBDataContext>();
 builder.Services.AddScoped(typeof(TestTableRepository));
+builder.Services.AddScoped(typeof(FeedbackRepository));
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

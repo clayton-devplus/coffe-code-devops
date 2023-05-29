@@ -9,6 +9,7 @@ namespace CoffeCodeDevops.Data
     public class DBDataContext : DbContext
     {
         public DbSet<TestTableModel> TestTable { get; set; }
+        public DbSet<FeedbackModel> Feedbacks { get; set; }
 
         public IConfiguration Configuration { get; }
 
@@ -43,6 +44,7 @@ namespace CoffeCodeDevops.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new TestTableConfiguration());
+            modelBuilder.ApplyConfiguration(new FeedbackConfiguration());
         }
     }
 
