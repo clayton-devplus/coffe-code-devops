@@ -19,7 +19,8 @@ namespace CoffeCodeDevops.Data.Repository
                 FeedbackId = Guid.NewGuid(),
                 NextWorkshop = feedback.NextWorkshop,
                 PresentationNote = feedback.PresentationNote,
-                SpeakerNote = feedback.SpeakerNote
+                SpeakerNote = feedback.SpeakerNote,
+                Feedback = feedback.Feedback
             };
 
             _context.Feedbacks.Add(feed);
