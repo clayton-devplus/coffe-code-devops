@@ -8,7 +8,7 @@ builder.Services.AddDbContext<DBDataContext>();
 builder.Services.AddScoped(typeof(TestTableRepository));
 builder.Services.AddScoped(typeof(FeedbackRepository));
 builder.Services.AddControllers();
-builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddEndpointsApiExplorer()
 builder.Services.AddSwaggerGen();
 builder.Services.AddCors(options =>
 {
