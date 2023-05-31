@@ -29,5 +29,5 @@ spec:
             value: "America/Sao_Paulo"
           - name: ConnectionStrings__Postgres
             value: "DB_ACCESS"
-#            value: "Server=postgres-svc;Port=5432;Database=coffe-code;User Id=admin;Password=test123"
+#           value: "Server=postgres-svc;Port=5432;Database=coffe-code;User Id=admin;Password=test123"
             
