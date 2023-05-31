@@ -1,10 +1,8 @@
 resources:
+
 - Devops/api-deployment.yaml
 - Devops/api-cert.yaml
 - Devops/api-svc.yaml
 - Devops/ingress-svc.yaml
 
-- Devops/postgres/postgres-configmap.yaml
-- Devops/postgres/postgres-storage.yaml
-- Devops/postgres/postgres-deployment.yaml
-- Devops/postgres/postgres-svc.yaml
+- Devops/postgres/postgres.yaml
