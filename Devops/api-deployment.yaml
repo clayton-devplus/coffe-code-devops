@@ -28,5 +28,5 @@ spec:
           - name: TZ
             value: "America/Sao_Paulo"
           - name: ConnectionStrings__Postgres
-            value: "Server=postgres-svc;Port=5432;Database=coffe-code;User Id=admin;Password=test123"
+            value: "Server=34.71.162.137;Port=5432;Database=coffe-code;User Id=postgres;Password=Gd5feder@l"
             
