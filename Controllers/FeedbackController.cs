@@ -28,5 +28,12 @@ namespace CoffeCodeDevops.Controllers
             await _feedbackRepository.CreateFeedbackAsync(feedback);
             return Ok(feedback);
         }
+
+        [HttpPost("CreateFeedbackList")]
+        public async Task<IActionResult> CreateFeedback([FromBody] FeedbackDto[] feedbacks)
+        {
+            await _feedbackRepository.CreateFeedbackListAsync(feedbacks);
+            return Ok(feedbacks);
+        }
     }
 }

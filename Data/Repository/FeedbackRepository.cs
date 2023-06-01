@@ -27,6 +27,23 @@ namespace CoffeCodeDevops.Data.Repository
             _context.Feedbacks.Add(feed);
             await _context.SaveChangesAsync();
         }
+        public async Task CreateFeedbackListAsync(FeedbackDto[] feedbacks)
+        {
+            foreach (var feedback in feedbacks)
+            {
+                var feed = new FeedbackModel()
+                {
+                    FeedbackId = Guid.NewGuid(),
+                    NextWorkshop = feedback.NextWorkshop,
+                    PresentationNote = feedback.PresentationNote,
+                    SpeakerNote = feedback.SpeakerNote,
+                    Feedback = feedback.Feedback
+                };
+
+                _context.Feedbacks.Add(feed);
+                await _context.SaveChangesAsync();
+            }
+        }
         public async Task<List<FeedbackModel>> GetFeedbacksAsync()
         {
             var feedbacks = await _context.Feedbacks.ToListAsync();
